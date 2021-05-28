@@ -21,23 +21,23 @@ Required arguments are denoted inside &lt; and &gt; Optional arguments are insid
 |-
 | <code>getbestsaplinganchor</code> || &nbsp; ||  || 
 |-
-| <code>getblock</code> || <hash> [verbose] || Returns information about the block with the given hash. || N
+| <code>getblock</code> || &lt;hash&gt; [verbose] || Returns information about the block with the given hash. || N
 |-
 | <code>getblockchaininfo</code> || &nbsp; || Returns an object containing various state info regarding block chain processing. || N
 |-
 | <code>getblockcount</code> || &nbsp; || Returns the number of blocks in the longest block chain. || N
 |-
-| <code>getblockhash</code> || <index> || Returns hash of block in best-block-chain at index provided. || N
+| <code>getblockhash</code> || &lt;index&gt; || Returns hash of block in best-block-chain at index provided. || N
 |-
-| <code>getblockheader</code> || <hash> [verbose] || If verbose is false, returns a string that is serialized, hex-encoded data for block 'hash' header. If verbose is true, returns an Object with information about block <hash> header. || N
+| <code>getblockheader</code> || &lt;hash&gt; [verbose] || If verbose is false, returns a string that is serialized, hex-encoded data for block 'hash' header. If verbose is true, returns an Object with information about block &lt;hash&gt; header. || N
 |-
-| <code>getblockindexstats</code> || <height> <range> || x || x
+| <code>getblockindexstats</code> || &lt;height&gt; &lt;range&gt; || x || x
 |-
 | <code>getchaintips</code> || &nbsp; || Return information about all known tips in the block tree, including the main chain as well as orphaned branches. || N
 |-
 | <code>getdifficulty</code> || &nbsp; || Returns the proof-of-work difficulty as a multiple of the minimum difficulty. || N
 |-
-| <code>getfeeinfo</code> || <blocks> || x || x
+| <code>getfeeinfo</code> || &lt;blocks&gt; || x || x
 |-
 | <code>getmempoolinfo</code> || &nbsp; || Returns details on the active state of the TX memory pool. || N
 |-
@@ -45,7 +45,7 @@ Required arguments are denoted inside &lt; and &gt; Optional arguments are insid
 |-
 | <code>getsupplyinfo</code> || [forceupdate] || x || x
 |-
-| <code>gettxout</code> || <txid> <n> [includemempool=true] || Returns details about an unspent transaction output. || N
+| <code>gettxout</code> || &lt;txid&gt; &lt;n&gt; [includemempool=true] || Returns details about an unspent transaction output. || N
 |-
 | <code>gettxoutsetinfo</code> || &nbsp; || Returns statistics about the unspent transaction output set. || N
 |-
@@ -59,19 +59,19 @@ Required arguments are denoted inside &lt; and &gt; Optional arguments are insid
 |-
 | <code>getbudgetprojection</code> || &nbsp; || Show the projection of which proposals will be paid the next cycle. || N
 |-
-| <code>getbudgetvotes</code> || <proposal> || Print vote information for a budget proposal. || N
+| <code>getbudgetvotes</code> || &lt;proposal&gt; || Print vote information for a budget proposal. || N
 |-
 | <code>getnextsuperblock</code> || &nbsp; || Print the next super block height || N
 |-
-| <code>mnbudgetrawvote</code> || <masternode-tx-hash> <masternode-tx-index> <proposal-hash> <yes|no> <time> <vote-sig> || Compile and relay a proposal vote with provided external signature instead of signing vote internally. || N
+| <code>mnbudgetrawvote</code> || &lt;masternode-tx-hash&gt; &lt;masternode-tx-index&gt; &lt;proposal-hash&gt; &lt;yes|no&gt; &lt;time&gt; &lt;vote-sig&gt; || Compile and relay a proposal vote with provided external signature instead of signing vote internally. || N
 |-
-| <code>mnbudgetvote</code> || <local|many|alias> <votehash> <yes|no> [alias] || Vote on a budget proposal. || N
+| <code>mnbudgetvote</code> || &lt;local|many|alias&gt; &lt;votehash&gt; &lt;yes|no&gt; [alias] || Vote on a budget proposal. || N
 |-
-| <code>mnfinalbudget</code> || <command> [passphrase] || Vote or show current budgets. || Y/N
+| <code>mnfinalbudget</code> || &lt;command&gt; [passphrase] || Vote or show current budgets. || Y/N
 |-
-| <code>preparebudget</code> || <proposal-name> <url> <payment-count> <block-start> <pivx-address> <monthly-payment> || Prepare proposal for network by signing and creating tx. || Y
+| <code>preparebudget</code> || &lt;proposal-name&gt; &lt;url&gt; &lt;payment-count&gt; &lt;block-start&gt; &lt;pivx-address&gt; &lt;monthly-payment&gt; || Prepare proposal for network by signing and creating tx. || Y
 |-
-| <code>submitbudget</code> || <proposal-name> <url> <payment-count> <block-start> <pivx-address> <monthly-payment> <fee-tx> || Submit proposal to the network. || N
+| <code>submitbudget</code> || &lt;proposal-name&gt; &lt;url&gt; &lt;payment-count&gt; &lt;block-start&gt; &lt;pivx-address&gt; &lt;monthly-payment&gt; &lt;fee-tx&gt; || Submit proposal to the network. || N
 
 |-
 !colspan='4' | Control
@@ -80,19 +80,19 @@ Required arguments are denoted inside &lt; and &gt; Optional arguments are insid
 |-
 | <code>help</code> || [command] || List all commands, or get help for a specified command. || N
 |-
-| <code>mnsync</code> || <status|reset> || Returns the sync status or resets sync. || N
+| <code>mnsync</code> || &lt;status|reset&gt; || Returns the sync status or resets sync. || N
 |-
-| <code>spork</code> || <show|active> || Print raw value or active status of sporks. || N
+| <code>spork</code> || &lt;show|active&gt; || Print raw value or active status of sporks. || N
 |-
 | <code>stop</code> || &nbsp; || Stop PIVX server. || N
 |-
 !colspan='4' | Masternode
 |-
-| <code>createmasternodebroadcast</code> || <command> [alias] || x || x
+| <code>createmasternodebroadcast</code> || &lt;command&gt; [alias] || x || x
 |-
 | <code>createmasternodekey</code> || &nbsp; || Create a new masternode private key. || N
 |-
-| <code>decodemasternodebroadcast</code> || <hexstring> || x || x
+| <code>decodemasternodebroadcast</code> || &lt;hexstring&gt; || x || x
 |-
 | <code>getmasternodecount</code> || &nbsp; || Get masternode count values. || N
 |-
@@ -112,25 +112,25 @@ Required arguments are denoted inside &lt; and &gt; Optional arguments are insid
 |-
 | <code>masternodecurrent</code> || &nbsp || Get current masternode winner. || N
 |-
-| <code>relaymasternodebroadcast</code> || <hexstring> || x || x
+| <code>relaymasternodebroadcast</code> || &lt;hexstring&gt; || x || x
 |-
-| <code>startmasternode</code> || <local|all|many|missing|disabled|alias> <lockwallet> [alias] || Attempts to start one or more masternode(s). || Y/N
+| <code>startmasternode</code> || &lt;local|all|many|missing|disabled|alias&gt; &lt;lockwallet&gt; [alias] || Attempts to start one or more masternode(s). || Y/N
 
 |-
 !colspan='4' | PIVX
 |-
-| <code>prioritisetransaction</code> || <txid> <priority delta> <fee delta> || Accepts the transaction into mined blocks at a higher (or lower) priority || N
+| <code>prioritisetransaction</code> || &lt;txid&gt; &lt;priority delta&gt; &lt;fee delta&gt; || Accepts the transaction into mined blocks at a higher (or lower) priority || N
 
 |-
 !colspan='4' | Network
 |-
-| <code>addnode</code> || <node> <add|remove|onetry> || Attempts add or remove a node from the addnode list. Or try a connection to a node once. || N
+| <code>addnode</code> || &lt;node&gt; &lt;add|remove|onetry&gt; || Attempts add or remove a node from the addnode list. Or try a connection to a node once. || N
 |-
 | <code>clearbanned</code> || &nbsp; || version 3.1.0 Clear all banned IPs. || N
 |-
-| <code>disconnectnode</code> || <node> || version 3.1.0 Immediately disconnects from the specified node. || N
+| <code>disconnectnode</code> || &lt;node&gt; || version 3.1.0 Immediately disconnects from the specified node. || N
 |-
-| <code>getaddednodeinfo</code> || <dns> [node] || Returns information about the given added node, or all added nodes. (note that onetry addnodes are not listed here) If dns is false, only a list of added nodes will be provided, otherwise connected information will also be available. || N
+| <code>getaddednodeinfo</code> || &lt;dns&gt; [node] || Returns information about the given added node, or all added nodes. (note that onetry addnodes are not listed here) If dns is false, only a list of added nodes will be provided, otherwise connected information will also be available. || N
 |-
 | <code>getconnectioncount</code> || &nbsp; || Returns the number of connections to other nodes. || N
 |-
@@ -144,39 +144,39 @@ Required arguments are denoted inside &lt; and &gt; Optional arguments are insid
 |-
 | <code>ping</code> || &nbsp; || Requests that a ping be sent to all other nodes, to measure ping time. || N
 |-
-| <code>setban</code> || <ip(/netmask)> <add|remove> [bantime] [absolute] || version 3.1.0 Attempts add or remove a IP/Subnet from the banned list. || N
+| <code>setban</code> || &lt;ip(/netmask)&gt; &lt;add|remove&gt; [bantime] [absolute] || version 3.1.0 Attempts add or remove a IP/Subnet from the banned list. || N
 |-
 
 !colspan='4' | Raw Transactions
 |-
 | <code>createrawtransaction</code> || [{"txid":txid,"vout":n},...] {address:amount,...} || Creates a raw transactionspending given inputs. || N
 |-
-| <code>decoderawtransaction</code> || <hex string> || Produces a human-readable JSON object for a raw transaction. || N
+| <code>decoderawtransaction</code> || &lt;hex string&gt; || Produces a human-readable JSON object for a raw transaction. || N
 |-
-| <code>decodescript</code> || <hex> || Decode a hex-encoded script. || N
+| <code>decodescript</code> || &lt;hex&gt; || Decode a hex-encoded script. || N
 |-
-| <code>fundrawtransaction</code> || <hexstring> [options] || x || x
+| <code>fundrawtransaction</code> || &lt;hexstring&gt; [options] || x || x
 |-
-| <code>getrawtransaction</code> || <txid> [verbose=0] || Returns raw transactionrepresentation for given transaction id. || N
+| <code>getrawtransaction</code> || &lt;txid&gt; [verbose=0] || Returns raw transactionrepresentation for given transaction id. || N
 |-
-| <code>sendrawtransaction</code> || <hexstring> [allowhighfees=false] [swiftx=false] || Submits raw transaction (serialized, hex-encoded) to local node and network. || N
+| <code>sendrawtransaction</code> || &lt;hexstring&gt; [allowhighfees=false] [swiftx=false] || Submits raw transaction (serialized, hex-encoded) to local node and network. || N
 |-
-| <code>signrawtransaction</code> || "<hexstring>" [{"txid":txid,"vout":n,"scriptPubKey":hex},...] [<privatekey1>,...] [sighashtype=ALL] || Adds signatures to a raw transaction and returns the resulting raw transaction. || Y/N
+| <code>signrawtransaction</code> || "&lt;hexstring&gt;" [{"txid":txid,"vout":n,"scriptPubKey":hex},...] [&lt;privatekey1&gt;,...] [sighashtype=ALL] || Adds signatures to a raw transaction and returns the resulting raw transaction. || Y/N
 |-
 !colspan='4' | Utility
 |-
-| <code>createmultisig</code> || <nrequired> <["key",...]> || Creates a multi-signature address with n signature of m keys required. || N
+| <code>createmultisig</code> || &lt;nrequired&gt; &lt;["key",...]&gt; || Creates a multi-signature address with n signature of m keys required. || N
 |-
-| <code>estimatefee</code> || <nblocks> || Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within nblocks blocks. || N
+| <code>estimatefee</code> || &lt;nblocks&gt; || Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within nblocks blocks. || N
 |-
 | <code>estimatesmartfee nblocks</code> || x || x || x
 |-
 | <code>logging</code> || "[include,...]  [exclude,...]"  || x || x
 |-
-| <code>validateaddress</code> || <nowiki>pivxaddress</nowiki> || Returns information about the given pivx address. || N
+| <code>validateaddress</code> || &lt;nowiki&gt;pivxaddress&lt;/nowiki&gt; || Returns information about the given pivx address. || N
 |-
 |-
-| <code>verifymessage</code> || <pivxaddress> <signature> <message> || Verify a signed message. || N
+| <code>verifymessage</code> || &lt;pivxaddress&gt; &lt;signature&gt; &lt;message&gt; || Verify a signed message. || N
 |}
 
 ==Error Codes==
