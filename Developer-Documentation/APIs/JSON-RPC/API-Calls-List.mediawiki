@@ -146,9 +146,10 @@ Required arguments are denoted inside &lt; and &gt; Optional arguments are insid
 |-
 | <code>setban</code> || <ip(/netmask)> <add|remove> [bantime] [absolute] || version 3.1.0 Attempts add or remove a IP/Subnet from the banned list. || N
 |-
+
 !colspan='4' | Raw Transactions
 |-
-| <code>createrawtransaction</code> || [{""txid"":txid,""vout"":n},...] {address:amount,...} || Creates a raw transactionspending given inputs. || N
+| <code>createrawtransaction</code> || [{"txid":txid,"vout":n},...] {address:amount,...} || Creates a raw transactionspending given inputs. || N
 |-
 | <code>decoderawtransaction</code> || <hex string> || Produces a human-readable JSON object for a raw transaction. || N
 |-
@@ -170,152 +171,12 @@ Required arguments are denoted inside &lt; and &gt; Optional arguments are insid
 |-
 | <code>estimatesmartfee nblocks</code> || x || x || x
 |-
-| <code>logging [include,...] ( [exclude,...] )</code> || x || x || x
+| <code>logging</code> || "[include,...]  [exclude,...]"  || x || x
 |-
-| <code>validateaddress</code> || <pivxaddress> || Return information about the given pivx address. || N
+| <code>validateaddress</code> || <nowiki>pivxaddress</nowiki> || Returns information about the given pivx address. || N
+|-
 |-
 | <code>verifymessage</code> || <pivxaddress> <signature> <message> || Verify a signed message. || N
-
-|-
-!colspan='4' | Wallet
-|-
-| <code>abandontransaction "txid"</code> || x || x || x
-|-
-| <code>addmultisigaddress</code> || <nrequired> <'["key",...]'> [account] || Add a nrequired-to-sign multisignature address to the wallet. Each key is a PIVX address or hex-encoded public key. If 'account' is specified, assign address to that account. || Y/N
-|-
-| <code>autocombinerewards</code> || <true|false> [threshold] || Wallet will automatically monitor for any coins with value below the threshold amount, and combine them if they reside with the same PIVX address. || Y
-|-
-| <code>backupwallet</code> || <destination> || Safely copies wallet.dat to destination, which can be a directory or a path with filename. || N
-|-
-| <code>bip38decrypt</code> || <pivxaddress> <passphrase> || Decrypts and then imports password protected private key. || Y
-|-
-| <code>bip38encrypt</code> || <pivxaddress> <passphrase> || Encrypts a private key corresponding to 'pivxaddress'. || Y
-|-
-| <code>delegatestake "stakingaddress" amount ( "owneraddress" fExternalOwner fUseDelegated fFromShield fForceNotEnabled )</code> || x || x || x
-|-
-| <code>delegatoradd "addr" ( "label" )</code> || x || x || x
-|-
-| <code>delegatorremove "addr"</code> || x || x || x
-|-
-| <code>dumpprivkey</code> || <pivxaddress> || Reveals the private key corresponding to 'pivxaddress'. || Y
-|-
-| <code>dumpwallet</code> || <filename> || Dumps all wallet keys in a human-readable format. || Y
-|-
-| <code>exportsaplingkey "shield_addr"</code> || x || x || x
-|-
-| <code>exportsaplingviewingkey "shield_addr"</code> || x || x || x
-|-
-| <code>getaddressesbylabel "label"</code> || x || x || x
-|-
-| <code>getbalance</code> || [account] [minconf=1] [includeWatchonly=false] || If [account] is not specified, returns the server's total available balance.
-If [account] is specified, returns the balance in the account. || N
-|-
-| <code>getbalance ( minconf includeWatchonly includeDelegated includeShield )</code> || x || x || x
-|-
-| <code>getcoldstakingbalance</code> || x || x || x
-|-
-| <code>getdelegatedbalance</code> || x || x || x
-|-
-| <code>getnewaddress</code> || [account] || Returns a new PIVX address for receiving payments. If [account] is specified payments received with the address will be credited to [account]. || Y
-|-
-| <code>getnewshieldaddress</code> || x || x || x
-|-
-| <code>getnewstakingaddress ( "label" )</code> || x || x || x
-|-
-| <code>getrawchangeaddress</code> || &nbsp; || Returns a new PIVX address, for receiving change. This is for use with raw transactions, NOT normal use. || N
-|-
-| <code>getreceivedbyaddress</code> || <pivxaddress> [minconf=1] || Returns the amount received by <pivxaddress> in transactions with at least [minconf] confirmations. It correctly handles the case where someone has sent to the address in multiple transactions. Keep in mind that addresses are only ever used for receiving transactions. Works only for addresses in the local wallet, external addresses will always show 0. || N
-|-
-| <code>getreceivedbylabel "label" ( minconf )</code> || x || x || x
-|-
-| <code>getsaplingnotescount ( minconf )</code> || x || x || x
-|-
-| <code>getshieldbalance "address" ( minconf includeWatchonly )</code> || x || x || x
-|-
-| <code>getstakesplitthreshold</code> || &nbsp || Returns the threshold for stake splitting. || N
-|-
-| <code>getstakingstatus</code> || &nbsp || Returns an object containing various staking information. || N
-|-
-| <code>gettransaction</code> || <txid> [includeWatchonly] || Get detailed information about in-wallet transaction <txid>. || N
-|-
-| <code>getunconfirmedbalance</code> || &nbsp; || Returns the server's total unconfirmed balance . || N
-|-
-| <code>getwalletinfo</code> || &nbsp; || Returns an object containing various wallet state info. || N
-|-
-| <code>importaddress</code> || <address> [label] [rescan=true] || Adds an address or script (in hex) that can be watched as if it were in your wallet but cannot be used to spend. || Y
-|-
-| <code>importprivkey</code> || <pivxprivkey> [label] [rescan=true] || Adds a private key (as returned by dumpprivkey) to your wallet. || Y
-|-
-| <code>importpubkey "pubkey" ( "label" rescan )</code> || x || x || x
-|-
-| <code>importsaplingkey "key" ( rescan startHeight )</code> || x || x || x
-|-
-| <code>importsaplingviewingkey "vkey" ( rescan startHeight )</code> || x || x || x
-|-
-| <code>importwallet</code> || <filename> || Imports keys from a wallet dump file (see dumpwallet). || Y
-|-
-| <code>keypoolrefill</code> || <newsize> || Fills the keypool. || Y
-|-
-| <code>listaddressgroupings</code> || &nbsp; || Returns all addresses in the wallet and info used for coincontrol. || N
-|-
-| <code>listcoldutxos ( nonWhitelistedOnly )</code> || x || x || x
-|-
-| <code>listdelegators ( fBlacklist )</code> || x || x || x
-|-
-| <code>listlabels ( "purpose" )</code> || x || x || x
-|-
-| <code>listlockunspent</code> || &nbsp; || Returns list of temporarily unspendable outputs. || N
-|-
-| <code>listreceivedbyaddress</code> || [minconf=1] [includeempty=false] [includeWatchonly=false] || List balances by receiving address. || N
-|-
-| <code>listreceivedbylabel ( minconf includeempty includeWatchonly)</code> || x || x || x
-|-
-| <code>listreceivedbyshieldaddress "address" ( minconf )</code> || x || x || x
-|-
-| <code>listshieldaddresses ( includeWatchonly )</code> || x || x || x
-|-
-| <code>listshieldunspent ( minconf maxconf includeWatchonly ["shield_addr",...] )</code> || x || x || x
-|-
-| <code>listsinceblock</code> || [blockhash] [target-confirmations] [includeWatchonly=false] || Get all transactions in blocks since block [blockhash], or all transactions if omitted. || N
-|-
-| <code>liststakingaddresses "addr"</code> || x || x || x
-|-
-| <code>listtransactions</code> || [account] [count=10] [from=0] [includeWatchonly=false] || Returns up to [count] most recent transactions skipping the first [from] transactions for account [account]. If [account] not provided it'll return recent transactions from all accounts. || N
-|-
-| <code>listunspent</code> || [minconf=1] [maxconf=9999999] ['["addresses",...]'] || Returns array of unspent transaction outputs with between minconf and maxconf (inclusive) confirmations. Optionally filter to only include txouts paid to specified addresses. || N
-|-
-| <code>lockunspent</code> || <unlock> <'[{"txid":"txid","vout":n},...]'> || Updates list of temporarily unspendable outputs. || Y
-|-
-| <code>rawdelegatestake "stakingaddress" amount ( "owneraddress" fExternalOwner fUseDelegated fFromShield )</code> || x || x || x
-|-
-| <code>rawshieldsendmany "fromaddress" [{"address":... ,"amount":...},...] ( minconf fee )</code> || x || x || x
-|-
-| <code>sendmany {"address":amount,...} ( minconf "comment" includeDelegated )</code> || x || x || x
-|-
-| <code>sendtoaddress</code> || <pivxaddress> <amount> [comment] [comment-to] || Send an amount to a given address. <amount> is a real and is rounded to 8 decimal places. Returns the transaction ID <txid> if successful. || Y
-|-
-| <code>sethdseed ( newkeypool "seed" )</code> || x || x || x
-|-
-| <code>setlabel "pivxaddress" "label"</code> || x || x || x
-|-
-| <code>setstakesplitthreshold</code> || <value> || This will set the output size of your stakes to never be below the given value. || Y
-|-
-| <code>settxfee</code> || <amount> || Set the transaction fee per kB. || N
-|-
-| <code>shieldsendmany "fromaddress" [{"address":... ,"amount":...},...] ( minconf fee )</code> || x || x || x
-|-
-| <code>signmessage</code> || <pivxaddress> <message> || Sign a message with the private key of an address. || Y
-|-
-| <code>upgradewallet</code> || x || x || x
-|-
-| <code>viewshieldtransaction "txid"</code> || x || x || x
-|-
-| <code>walletlock</code> || &nbsp; || Removes the wallet encryption key from memory, locking the wallet. || Y
-|-
-| <code>walletpassphrase</code> || <passphrase> <timeout> [anonymizeonly=false] || Stores the wallet decryption key in memory for 'timeout' seconds. || N
-|-
-| <code>walletpassphrasechange</code> || <oldpassphrase> <newpassphrase> || Changes the wallet passphrase from 'oldpassphrase' to 'newpassphrase'. || N
-|-
 |}
 
 ==Error Codes==
@@ -328,4 +189,3 @@ See [https://github.com/bitcoin/bitcoin/blob/62f2d769e45043c1f262ed45babb70fe237
 * [http://code.gogulski.com/bitcoin-php/class_bitcoin_client.html PHP BitcoinClient Class Reference]
 
 ==References==
-<references />
